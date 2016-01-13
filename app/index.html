@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="geits">
+<head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://bootsnipp.com/dist/bootsnipp.min.css?ver=7d23ff901039aef6293954d33d23c066">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://bootsnipp.com/dist/scripts.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+
+    <script src="controllers/homeController.js"></script>
+    <script src="services/homeService.js"></script>
+
+    <script src="config/config.js"></script>
+    <title></title>
+</head>
+<body>
+    <!-- calling header using angularjs -->
+    <div ng-include="'shared/_header.html'">
+    </div>
+    <!-- end of calling header -->
+
+    <div style="height: 880px;" ng-controller="homeApiController">
+        message is: {{message}}
+
+        <div ng-repeat="d in data">
+            <p>Project Title: {{d.projecttitle}}</p><br />
+            <p>Project Description: {{d.projectdescription}}</p><br />
+        </div>
+    </div>
+</body>
+</html>
